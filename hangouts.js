@@ -4,6 +4,9 @@
 
 const fs = require('fs');
 
+
+const names = ['Kenneth Koepcke']; //The nick names
+const maximum_participants = 7; //i.e. a single conversation thread will have 2 people
 const hangouts_file = "data/Hangouts.json"
 const fileout = "out/test.txt";
 
@@ -16,8 +19,6 @@ let writeStream = fs.createWriteStream(fileout);
 let fo = new console.Console(writeStream, writeStream);
 
 
-const names = ['Kenneth Koepcke']; //The nick names
-const maximum_participants = 7; //i.e. a single conversation thread will have 2 people
 let id_map = {};
 
 for(let message_i = 0; message_i < json.conversations.length; message_i ++){
