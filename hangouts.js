@@ -3,10 +3,14 @@
  */
 
 const fs = require('fs');
-let data = fs.readFileSync("data/Hangouts.json");
+
+const hangouts_file = "data/Hangouts.json"
+const fileout = "out/test.txt";
+
+let data = fs.readFileSync(hangouts_file);
 let json = JSON.parse(data);
 
-const fileout = "out/test.txt";
+
 let writeStream = fs.createWriteStream(fileout);
 
 let fo = new console.Console(writeStream, writeStream);
